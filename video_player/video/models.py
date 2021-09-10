@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class History(models.Model):
-    history_url = models.URLField()
+    history_url = models.URLField(unique=True)
     date_watched = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
